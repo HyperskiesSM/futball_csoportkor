@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Futball csoportkör</title>
+</head>
+<body>
+        <input class="mod-valto" id="mod-hozzaadas" type="radio" name="csapat-muvelet" aria-label="Csapat hozzáadása mód" checked>
+        <input class="mod-valto" id="mod-modositas" type="radio" name="csapat-muvelet" aria-label="Csapat módosítása mód">
+        <input class="mod-valto" id="mod-torles" type="radio" name="csapat-muvelet" aria-label="Csapat törlése mód">
+
+        <nav class="mod-menu" aria-label="Csapatkezelési műveletek">
+            <label for="mod-hozzaadas">Hozzáadás</label>
+            <label for="mod-modositas">Módosítás</label>
+            <label for="mod-torles">Törlés</label>
+        </nav>
+
+        <div class="mod-panelek">
+
+            <section id="csapat-hozzaadas-panel" aria-labelledby="csapat-hozzaadas-cim">
+
+                <h2 id="csapat-hozzaadas-cim">Csapat hozzáadása</h2>
+                <form id="csapat-hozzaadas-urlap">
+                    <label for="hozzaadas-csapatnev">Csapat neve</label>
+                    <input id="hozzaadas-csapatnev" name="csapatNev" type="text" required>
+
+                    <label for="hozzaadas-meccsek">Lejátszott mérkőzések</label>
+                    <input id="hozzaadas-meccsek" name="meccsek" type="number" min="0" value="0" required>
+
+                    <label for="hozzaadas-gyozelmek">Győzelmek</label>
+                    <input id="hozzaadas-gyozelmek" name="gyozelmek" type="number" min="0" value="0" required>
+
+                    <label for="hozzaadas-veresegek">Vereségek</label>
+                    <input id="hozzaadas-veresegek" name="veresegek" type="number" min="0" value="0" required>
+
+                    <label for="hozzaadas-dontetlenek">Döntetlenek</label>
+                    <input id="hozzaadas-dontetlenek" name="dontetlenek" type="number" min="0" value="0" required>
+
+                    <label for="hozzaadas-golok">Lőtt gólok</label>
+                    <input id="hozzaadas-golok" name="golok" type="number" min="0" value="0" required>
+
+                    <label for="hozzaadas-kapott-golok">Kapott gólok</label>
+                    <input id="hozzaadas-kapott-golok" name="kapottGolok" type="number" min="0" value="0" required>
+
+                    <button id="csapat-hozzaadas-gomb" type="button">Csapat hozzáadása</button>
+                </form>
+
+            </section>
+
+
+
+            <section id="csapat-modositas-panel" aria-labelledby="csapat-modositas-cim">
+
+                <h2 id="csapat-modositas-cim">Csapat módosítása</h2>
+                <form id="csapat-modositas-urlap">
+                    <label for="modositando-csapat">Módosítandó csapat</label>
+                    <select id="modositando-csapat" name="modositandoCsapat" required>
+                        <option value="">Válassz csapatot</option>
+                    </select>
+
+                    <label for="modositas-csapatnev">Csapat neve</label>
+                    <input id="modositas-csapatnev" name="csapatNev" type="text" required>
+
+                    <label for="modositas-meccsek">Lejátszott mérkőzések</label>
+                    <input id="modositas-meccsek" name="meccsek" type="number" min="0" required>
+
+                    <label for="modositas-gyozelmek">Győzelmek</label>
+                    <input id="modositas-gyozelmek" name="gyozelmek" type="number" min="0" required>
+
+                    <label for="modositas-veresegek">Vereségek</label>
+                    <input id="modositas-veresegek" name="veresegek" type="number" min="0" required>
+
+                    <label for="modositas-dontetlenek">Döntetlenek</label>
+                    <input id="modositas-dontetlenek" name="dontetlenek" type="number" min="0" required>
+
+                    <label for="modositas-golok">Lőtt gólok</label>
+                    <input id="modositas-golok" name="golok" type="number" min="0" required>
+
+                    <label for="modositas-kapott-golok">Kapott gólok</label>
+                    <input id="modositas-kapott-golok" name="kapottGolok" type="number" min="0" required>
+
+                    <button id="csapat-modositas-gomb" type="button">Módosítások mentése</button>
+                </form>
+
+            </section>
+
+
+
+            <section id="csapat-torles-panel" aria-labelledby="csapat-torles-cim">
+
+                <h2 id="csapat-torles-cim">Csapat törlése</h2>
+                <label for="torlendo-csapat">Törlendő csapat</label>
+                <select id="torlendo-csapat" name="torlendoCsapat">
+                    <option value="">Válassz csapatot</option>
+                </select>
+                <button id="csapat-torles-gomb" type="button">Csapat törlése</button>
+
+            </section>
+            
+        </div>
+
+        <div id="tablazat"></div>
+
+</body>
+</html>
